@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>餐廳推薦系統 - 登入/註冊</title>
+  <style>
+    body {
+      font-family: "標楷體", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 200px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 200px;
+    }
+
+    input[type="submit"],
+    input[type="button"] {
+      width: 100px;
+    }
+
+    footer {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+    }
+  </style>
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username && password) {
+        window.open('test2.html', '_blank');
+      } else {
+        alert("請輸入使用者名稱和密碼");
+      }
+    }
+
+    function register() {
+      var newUsername = document.getElementById("newUsername").value;
+      var newPassword = document.getElementById("newPassword").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+	  
+      if (newUsername && newPassword && confirmPassword) {
+        if (newPassword === confirmPassword) {
+          alert("註冊成功！");
+          window.open('test3.html', '_blank');
+        } else {
+          alert("密碼和確認密碼不相符");
+        }
+      } else {
+        alert("請輸入使用者名稱、密碼和確認密碼");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>所在位置附近的餐廳推薦系統</h1>
+  
+  <!-- 登入表單 -->
+  <h2>登入</h2>
+  <form>
+    <label for="username">使用者名稱:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">密碼:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <input type="button" value="登入" onclick="login()">
+  </form>
+  
+  <!-- 註冊表單 -->
+  <h2>註冊</h2>
+  <form>
+    <label for="newUsername">使用者名稱:</label>
+    <input type="text" id="newUsername" name="newUsername" required>
+    <br>
+    <label for="newPassword">密碼:</label>
+    <input type="password" id="newPassword" name="newPassword" required>
+    <br>
+    <label for="confirmPassword">確認密碼:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+    <br>
+    <input type="button" value="註冊" onclick="register()">
+  </form>
+  
+  <footer>
+    <p>軟體工程十六組</p>
+  </footer>
+</body>
+</html>
